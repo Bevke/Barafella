@@ -1,171 +1,316 @@
+
+
 <!DOCTYPE html>
-<html class="no-js" lang="en">
-
+<html lang="tr">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Barafella - Sports</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    
-    <script data-ad-client="ca-pub-8104929624833479" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
-    <!--
-      <meta http-equiv = "refresh" content = "2; url = https://maifeeulasad.github.io/Bangladesh/" />
-
-      <script>
-      function BangladeshSpecial() {
-         console.log("BD");
-         if(new Date().getMonth()===11 && new Date().getDate()===16){
-            location.replace("https://maifeeulasad.github.io/Bangladesh/")     
-            //not working, check line 14       
-         }
-      }
-      </script>
-      -->
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ezel Vip</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            margin-bottom: 20px;
+        }
+        .video-container {
+            background-color: #000;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 650px;
+            margin: auto;
+            text-align: center;
+        }
+        .jwplayer {
+            width: 350px;
+            height: 300px;
+            border-radius: 10px;
+        }
+        .placeholder-image {
+            width: 350px;
+            height: 305px;
+            border-radius: 10px;
+            object-fit: cover;
+            display: block;
+            margin: auto;
+        }
+        .channel-list {
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+            padding-top: 20px;
+        }
+        .search-bar {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #2c2c2c;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 14px;
+        }
+        .channel-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2c2c2c;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .channel-item:hover {
+            background-color: #383838;
+        }
+        .status {
+            color: #4caf50;
+            font-weight: bold;
+            font-size: 12px;
+            padding: 2px 6px;
+            background-color: #1e7e34;
+            border-radius: 3px;
+        }
+        .channel-name {
+            flex-grow: 1;
+            text-align: left;
+            font-weight: bold;
+            padding-left: 10px;
+            font-size: 16px;
+        }
+        .date {
+            color: #9e9e9e;
+            font-size: 12px;
+        }
+        .counter {
+            color: white;
+            font-size: 18px;
+            position: fixed;
+            bottom: 7px;
+            right: 7px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 7px;
+            border-radius: 3px;
+        }
+        
+        /* Alert Box Styles */
+        .alert-box {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 300px;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: none;
+        }
+        .alert-box button {
+            background-color: #0088cc;
+            color: white;
+            padding: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        .alert-box .close-btn {
+            position: absolute;
+            top: -20px;
+            right: -140px;
+            background: transparent;
+            border: none;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
 </head>
-
 <body>
 
-    <div id="mobile-menu-open" class="shadow-large">
-        <i class="fa fa-bars" aria-hidden="true"></i>
-    </div>
-    <!-- End #mobile-menu-toggle -->
-    <header>
-        <div id="mobile-menu-close">
-            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+    <!-- Üst Menü -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Ezel Vip</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Kategoriler</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Favoriler</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Ayarlar</a>
+                </li>
+            </ul>
         </div>
-        <ul id="menu" class="shadow">
-            <li>
-                <a href="#about">Full Match</a>
-            </li>
-        </ul>
-    </header>
-    <!-- End header -->
-    <div id="lead">
-        <div id="lead-content">
-            <h1>Barafella</h1>
-            <h2>Sports</h2>
-        </div>
-        <!-- End #lead-content -->
-        <div id="lead-overlay"></div>
-        <div id="lead-down">
-            <span>
-            <i class="fa fa-chevron-down" aria-hidden="true"></i>
-            </span>
-        </div>
-        <!-- End #lead-down -->
-    </div>
-    <!-- End #lead -->
-    <div id="about" class="background-alt">
-        <h2 class="heading">Full Match</h2>
-        <div class="container">
-            <div class="row">
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/p1.jpg" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Beşiktaş Vs Lyon</h3>
-                        <p>
-                        </p>
-                        <a href="https://github.com/maifeeulasad/obstacle_avoiding_robot">Watch</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/p2.jpg" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Manchester United Vs Fenerbahçe</h3>
-                        <p>
-                        </p>
-                        <a href="https://github.com/maifeeulasad/i26_rel">Watch</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/p3.jpg" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>Benfica Vs Feyenoord</h3>
-                        <p>
-                        </p>
-                        <a href="https://github.com/maifeeulasad/freedom_rel">Watch</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
+    </nav>
 
+    <!-- Placeholder Image / Player Container -->
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="video-container">
+                    <!-- Initial Placeholder Image -->
+                    <img src="https://i.postimg.cc/tCgB6Dqf/20240817-204956.png" class="placeholder-image" id="placeholderImage" alt="EzelVip Placeholder">
+                    <!-- JW Player Container -->
+                  <div id="myPlayer" style="display:none;"></div>
+                </div>
             </div>
         </div>
     </div>
-    <!-- End #projects -->
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-5 copyright" id="mua-copyright">
-                    
-                </div>
-                <div class="col-sm-2 top">
-                    <span id="to-top">
-                  <i class="fa fa-chevron-up" aria-hidden="true"></i>
-                  </span>
-                </div>
-                <div class="col-sm-5 social">
-                    <ul>
-                        <li>
-                            <a href="https://github.com/maifeeulasad" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://stackoverflow.com/users/10305444/maifee-ul-asad" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.linkedin.com/in/maifee-ul-asad/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/maifeeulasad007se" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/Maifeeulasad" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        </li>
-                    </ul>
-                </div>
+    <!-- Kanal Listesi -->
+    <div class="channel-list">
+        <input type="text" class="search-bar" placeholder="İzlemek istediğin kanalı ara">
+                    <div class="channel-item" onclick="changeChannel('https://tv8-live.daioncdn.net/tv8/tv8.m3u8')">
+                <span class="status">CANLI</span>
+                <span class="channel-name">TV 8</span>
+                <span class="date">7/24</span>
             </div>
-        </div>
-    </footer>
-    
-<img src="https://komarev.com/ghpvc/?username=maifeeulasad&color=blue&style=flat-square" align="right" />
-    <!-- End footer -->
+                    <div class="channel-item" onclick="changeChannel('https://osaka.trgoalshls13.shop/yayintv85.m3u8')">
+                <span class="status">CANLI</span>
+                <span class="channel-name">TV 8,5</span>
+                <span class="date">7/24</span>
+            </div>
+                    <div class="channel-item" onclick="changeChannel('https://alperc1.serv00.net/xrot/getnew3u/1.m3u8?v=aHR0cHM6Ly93d3cub2hhLnRvL29oYS10di9wbGF5LzI0MDM0MjUwMzE4NzNhNDMwMGQxZTQ=')">
+                <span class="status">CANLI</span>
+                <span class="channel-name">beIN SPORTS 1 </span>
+                <span class="date">7/24</span>
+            </div>
+                    <div class="channel-item" onclick="changeChannel('https://s1k3rl3r.zirvedeyim4.cfd/yayinzirve.m3u8')">
+                <span class="status">CANLI</span>
+                <span class="channel-name">beIN SPORTS HD 1 Yedek</span>
+                <span class="date">7/24</span>
+            </div>
+                    <div class="channel-item" onclick="changeChannel('https://s1k3rl3r.zirvedeyim4.cfd/yayinb2.m3u8')">
+                <span class="status">CANLI</span>
+                <span class="channel-name">beINSports HD 2</span>
+                <span class="date">7/24</span>
+            </div>
+                    <div class="channel-item" onclick="changeChannel('https://osaka.trgoalshls13.shop/yayinb3.m3u8')">
+                <span class="status">CANLI</span>
+                <span class="channel-name">BEİN SPORT 3 HD</span>
+                <span class="date">7/24</span>
+            </div>
+                    <div class="channel-item" onclick="changeChannel('https://osaka.trgoalshls13.shop/yayinb4.m3u8')">
+                <span class="status">CANLI</span>
+                <span class="channel-name">beIN SPORTS HD 4</span>
+                <span class="date">7/24</span>
+            </div>
+                    <div class="channel-item" onclick="changeChannel('https://s1k3rl3r.zirvedeyim4.cfd/yayinb5.m3u8')">
+                <span class="status">CANLI</span>
+                <span class="channel-name">beIN Sports 5 </span>
+                <span class="date">7/24</span>
+            </div>
+                    <div class="channel-item" onclick="changeChannel('https://osaka.trgoalshls13.shop/yayint1.m3u8')">
+                <span class="status">CANLI</span>
+                <span class="channel-name">TiviBu Sport 1 HD TR</span>
+                <span class="date">7/24</span>
+            </div>
+                    <div class="channel-item" onclick="changeChannel('https://s1k3rl3r.zirvedeyim4.cfd/yayint2.m3u8')">
+                <span class="status">CANLI</span>
+                <span class="channel-name">TiviBu Sport 2 HD TR</span>
+                <span class="date">7/24</span>
+            </div>
+                    <div class="channel-item" onclick="changeChannel('https://tayland.kesintisizmaclar11.site/hls/s-sport.m3u8')">
+                <span class="status">CANLI</span>
+                <span class="channel-name">S Sport 1 TR</span>
+                <span class="date">7/24</span>
+            </div>
+                    <div class="channel-item" onclick="changeChannel('https://tayland.kesintisizmaclar11.site/hls/s-sport-2.m3u8')">
+                <span class="status">CANLI</span>
+                <span class="channel-name">S Sport 2 HD TR</span>
+                <span class="date">7/24</span>
+            </div>
+                    <div class="channel-item" onclick="changeChannel('http://991642821623319027.ofbo903.xyz:80/play/NNXJ7Y5YSE/akGvMESJ@tP/319027.m3u8')">
+                <span class="status">CANLI</span>
+                <span class="channel-name">S SPORT plus HD TR</span>
+                <span class="date">7/24</span>
+            </div>
+                    <div class="channel-item" onclick="changeChannel('http://stream.tvcdn.net/ulusal/trt-1.m3u8')">
+                <span class="status">CANLI</span>
+                <span class="channel-name">TRT 1</span>
+                <span class="date">7/24</span>
+            </div>
+            </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/scripts.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    
-    
+    <!-- Ziyaretçi Sayısı -->
+    <div class="counter">
+        Ziyaretçi Sayısı: 18763    </div>
+
+    <!-- Telegram Alert Box -->
+    <div class="alert-box" id="telegramAlert">
+        <button class="close-btn" onclick="closeAlert()">&times;</button>
+        Güncel site linki ve gelişmeler için telegrama katılın.
+        <br><br>
+        <a href="https://t.me/ezelviptv" target="_blank">
+            <button> Telegram </button>
+        </a>
+    </div>
+
+    <!-- Bootstrap ve JW Player JS dosyaları -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', 'UA-136427840-2', 'auto');
-      ga('send', 'pageview');
-   </script>
-   <script async src='https://www.google-analytics.com/analytics.js'></script>
-   <script src='./util.js'></script>
-    
-    
+        var player;  // Global player değişkeni
 
+   function changeChannel(url) {
+    // Placeholder resmini gizle ve player'ı göster
+    document.getElementById('placeholderImage').style.display = 'none';
+    document.getElementById('myPlayer').style.display = 'block';
+
+    // Eğer player zaten oluşturulmuşsa sadece kaynak URL'sini değiştir
+    if (player) {
+        player.load(url);  // Mevcut player'da yeni URL'yi yükle
+    } else {
+        // İlk defa player oluşturuluyorsa Clappr Player başlat
+        player = new Clappr.Player({
+    source: url,                             // Yayın kaynağı (URL)
+    mimeType: "application/x-mpegURL",       // MIME türü (HLS yayını için)
+    autoPlay: true,                          // Otomatik başlatma
+    mute: false,                             // Ses açık olarak başlatma
+    height: "360px",                         // Player yüksekliği
+    width: "100%",                           // Player genişliği
+    plugins: {                               // Pluginler
+        core: [LevelSelector]                // Seviye seçici eklentisi (kalite seçenekleri)
+    },
+    parentId: "#myPlayer"                    // Player'ın yer alacağı HTML element ID'si
+});
+    }
+}
+   
+
+
+        // Telegram Alert'i Gösterme
+        function showAlert() {
+            document.getElementById('telegramAlert').style.display = 'block';
+        }
+
+        // Telegram Alert'i Kapatma
+        function closeAlert() {
+            document.getElementById('telegramAlert').style.display = 'none';
+        }
+
+        // Telegram Alert'i 10 saniye sonra göster
+        setTimeout(showAlert, 1000); // 10 saniye sonra gösterilecek
+    </script>
 </body>
-
 </html>
