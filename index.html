@@ -1,3 +1,1288 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://FellaStream.rf.gd/?i=2 -->
+<html lang="tr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="vjs-styles-defaults">
+      .video-js {
+        width: 300px;
+        height: 150px;
+      }
 
-                <iframe class="video responsive" marginheight="0" marginwidth="0" src="https://thedaddy.to/embed/stream-49.php" name="iframe_a" scrolling="no" allowfullscreen="yes" width="100%" height="100%" frameborder="0">Your Browser Do not Support Iframe</iframe>
-      
+      .vjs-fluid:not(.vjs-audio-only-mode) {
+        padding-top: 56.25%
+      }
+    </style>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROAD SPORTS TV</title>
+    <style>
+        /* Açılış Ekranı */
+        .ramazan-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(to bottom, #0D1B2A, #1B263B);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 9999;
+            animation: fadeOut 2s ease-in-out 5s forwards;
+        }
+
+        /* Hilal ve Yıldız */
+        .moon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            box-shadow: 15px 15px 0px 5px gold;
+            animation: slideIn 2s ease-out, glow 3s infinite alternate;
+        }
+
+        .star {
+            width: 10px;
+            height: 10px;
+            background: gold;
+            border-radius: 50%;
+            position: absolute;
+            animation: twinkle 1.5s infinite alternate;
+        }
+
+        /* Yazı Stili */
+        .ramazan-text {
+            font-size: 42px;
+            font-weight: bold;
+            color: gold;
+            text-transform: uppercase;
+            text-shadow: 4px 4px 10px rgba(255, 215, 0, 0.8);
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 3s ease-in-out forwards 2s;
+        }
+
+        /* Ramazan Fenerleri */
+        .lantern {
+            width: 10px;
+            height: 80px;
+            background: gold;
+            position: absolute;
+            top: -100px;
+            animation: lanternDrop 2s ease-out forwards, swing 3s infinite alternate 2.5s;
+        }
+
+        /* Animasyonlar */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(10px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeOut {
+            100% { opacity: 0; visibility: hidden; }
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateY(-50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+            100% { opacity: 0.5; transform: scale(1); }
+        }
+
+        @keyframes glow {
+            0% { filter: drop-shadow(0px 0px 5px gold); }
+            100% { filter: drop-shadow(0px 0px 15px gold); }
+        }
+
+        @keyframes lanternDrop {
+            0% { top: -100px; }
+            100% { top: 50px; }
+        }
+
+        @keyframes swing {
+            0% { transform: rotate(-3deg); }
+            100% { transform: rotate(3deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Ramazan Açılış Ekranı -->
+    <div class="ramazan-screen" style="display: none;">
+        <div class="moon"></div>
+        <div class="star" style="top: 50px; left: 15%;"></div>
+        <div class="star" style="top: 120px; right: 20%;"></div>
+        <div class="star" style="top: 200px; left: 60%;"></div>
+        
+        <div class="ramazan-text">🌙 Hayırlı Ramazanlar! 🌙</div>
+
+        <div class="lantern" style="left: 20%;"></div>
+        <div class="lantern" style="right: 20%;"></div>
+    </div>
+
+    <script>
+        // 5 saniye sonra açılış ekranını kaldır
+        setTimeout(() => {
+            document.querySelector('.ramazan-screen').style.display = 'none';
+        }, 5000);
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="icon" type="image/png" href="https://i.hizliresim.com/o9u133m.png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FellaStream</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .warning-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffcc00;
+            color: #000;
+            text-align: center;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: slideDown 0.5s ease-in-out;
+            z-index: 1000;
+        }
+        .warning-banner .text {
+            flex: 1;
+            text-align: center;
+        }
+        .warning-banner .close-btn {
+            background: none;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 5px 10px;
+        }
+        .warning-banner a {
+            color: #d90000;
+            text-decoration: underline;
+            padding: 5px;
+            display: inline-block;
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        /* Mobil cihazlar için */
+        @media (max-width: 768px) {
+            .warning-banner {
+                font-size: 14px;
+                padding: 10px;
+            }
+            .warning-banner .close-btn {
+                font-size: 16px;
+                padding: 5px;
+            }
+        }
+    </style>
+
+
+    <div class="warning-banner" id="warningBanner">
+        <div class="text">⚠️ Yayınlarda donma/kasma sorunları oluşursa <a href="http://FellaStream.rf.gd/?i=2#">YEDEK KANALLAR</a> arasından seçim yapabilirsiniz.</div>
+        <button class="close-btn" onclick="closeBanner()">✖</button>
+    </div>
+    
+    <script>
+        function closeBanner() {
+            document.getElementById('warningBanner').style.display = 'none';
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="./ROAD SPORTS TV_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HJQP2H54XE');
+</script>
+
+
+
+
+<script>
+  // Sağ tıklamayı engelleme
+  document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+    window.location.href = '/404';  // 404 sayfasına yönlendirme
+  });
+
+  // F12 tuşunu engelleme
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'F12') {
+      e.preventDefault();
+      window.location.href = '/404';  // 404 sayfasına yönlendirme
+    }
+  });
+
+  // F12'yi engellemeye yönelik başka bir yol
+  document.onkeydown = function (e) {
+    if (e.keyCode === 123) {  // F12 tuşu
+      window.location.href = '/404';  // 404 sayfasına yönlendirme
+      return false;
+    }
+  };
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FellaStream</title>
+    <link href="./ROAD SPORTS TV_files/video-js.css" rel="stylesheet">
+    <link rel="stylesheet" href="./ROAD SPORTS TV_files/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        .channel-list {
+            max-height: 500px;
+            overflow-y: auto;
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        .channel-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            border-bottom: 1px solid #333;
+            transition: background-color 0.3s, transform 0.2s;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .channel-item:hover {
+            background-color: #2c2c2c;
+            transform: scale(1.02);
+        }
+        .live-indicator {
+            font-size: 0.9rem;
+            color: #28a745;
+            animation: pulse 1.5s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .search-bar input {
+            width: 100%;
+            max-width: 400px;
+            padding: 12px;
+            border: none;
+            border-radius: 25px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            font-size: 1rem;
+        }
+        .search-bar input::placeholder {
+            color: #bbb;
+        }
+        .search-bar input:focus {
+            outline: none;
+            background-color: #444;
+        }
+        .menu-bar {
+            background: linear-gradient(135deg, #1f1f1f, #2c2c2c);
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+            border-bottom: 2px solid #28a745;
+        }
+        .menu-bar a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            transition: all 0.3s ease-in-out;
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+        .menu-bar a:hover {
+            background-color: #28a745;
+            color: black;
+        }
+    </style>
+
+
+    <header class="bg-dark text-white py-3">
+        <div class="road-header">
+    
+    <h1 class="road-title">FellaStream</h1>
+
+    </div></header>
+    <nav class="menu-bar">
+        <a href="http://FellaStream.rf.gd/?i=2#">Ana Sayfa</a>
+        <a href="https://t.me/barafella" target="_blank">Telegram</a>
+    </nav>
+    <main class="container mt-4">
+        <div class="text-center">
+            <div class="alert alert-primary" role="alert">
+                SON DAKİKA: 7/24 Canlı Yayın!
+            </div>
+            <h2></h2>
+            <div class="embed-responsive embed-responsive-16by9 mb-4">
+                <video id="player" class="video-js vjs-default-skin embed-responsive-item" controls="" preload="auto" width="640" height="360">
+                    <source id="videoSource" src="" type="application/x-mpegURL">
+                </video>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="channelSearch" placeholder="🔍 Kanal Ara..." onkeyup="filterChannels()">
+            </div>
+            <div class="channel-list" id="channelList">
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="channel-item" onclick="playChannel(&#39;http://sorunsuztv.xyz:8080/live/Fdy123old/4645fsder3873/98925.m3u8&#39;)" style="display: flex; align-items: center; justify-content: space-between; background: linear-gradient(135deg, #ff416c, #ff4b2b); padding: 15px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); color: white; font-family: Arial, sans-serif; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; position: relative;">
+    
+    <div class="content-wrapper" style="display: flex; align-items: center; gap: 10px;">
+        <span class="channel-name" style="font-size: 18px; font-weight: bold;">BEİNSPORTS 1 HD</span>
+        <div class="match-info" id="match-info" style="font-size: 16px; font-weight: 500; padding: 5px 10px; border-radius: 8px; opacity: 1; transition: opacity 0.5s ease-in-out;">
+            20:30 | Beşiktaş 🆚 KayseriSpor
+        </div>
+    </div>
+    
+
+    <span class="live-indicator" style="font-size: 14px; color: #ffeb3b; font-weight: bold; margin-left: auto;">● Canlı</span>
+</div>
+
+<script>
+    let matchInfo = document.getElementById("match-info");
+
+    function animateMatchText() {
+        matchInfo.style.opacity = matchInfo.style.opacity == "1" ? "0.6" : "1";
+    }
+
+    setInterval(animateMatchText, 1000);
+
+    function playChannel(url) {
+        alert("Kanal açılıyor: " + url);
+    }
+</script>
+
+
+
+
+
+
+<div class="channel-item" onclick="playChannel(&#39;http://sorunsuztv.xyz:8080/live/Fdy123old/4645fsder3873/191152.m3u8&#39;)" style="display: flex; align-items: center; justify-content: space-between; background: linear-gradient(135deg, #ff416c, #ff4b2b); padding: 15px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); color: white; font-family: Arial, sans-serif; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; position: relative;">
+    
+    <div class="content-wrapper" style="display: flex; align-items: center; gap: 10px;">
+        <span class="channel-name" style="font-size: 18px; font-weight: bold;">BEİNSPORTS 1 HD</span>
+        <div class="match-info" id="match-info" style="font-size: 16px; font-weight: 500; padding: 5px 10px; border-radius: 8px; opacity: 0.8; transition: opacity 0.5s ease-in-out;">
+            HD | ÖZEL 🆚 4K
+        </div>
+    </div>
+    
+
+    <span class="live-indicator" style="font-size: 14px; color: #ffeb3b; font-weight: bold; margin-left: auto;">● Canlı</span>
+</div>
+
+<script>
+    let matchInfo = document.getElementById("match-info");
+
+    function animateMatchText() {
+        matchInfo.style.opacity = matchInfo.style.opacity == "1" ? "0.6" : "1";
+    }
+
+    setInterval(animateMatchText, 1000);
+
+    function playChannel(url) {
+        alert("Kanal açılıyor: " + url);
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="channel-item" onclick="playChannel(&#39;http://client.newsborntvs.info:80/live/KreshnikDahri/bRjguwZe2/51323.m3u8&#39;)">
+                    <span class="channel-name">BEİNSPORTS 1 HD (DÜŞÜK KALİTE DONMA OLMAZ) ÇALIŞIYOR BURAYI DENE</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+
+                <div class="channel-item" onclick="playChannel(&#39;http://client.newsborntvs.info:80/live/KreshnikDahri/bRjguwZe2/51330.m3u8&#39;)">
+                    <span class="channel-name">BEİNSPORTS 1 HD YEDEK 2 (DÜŞÜK KALİTE 2)</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+                 <div class="channel-item" onclick="playChannel(&#39;https://hlsikiiiiiiiiiiii.amhastasiyim.workers.dev/https://fener.demoscript.buzz/hls/bein-sports-1.m3u8&#39;)">
+                    <span class="channel-name">BEİNSPORTS 1 HD YEDEK 3 (DÜŞÜK KALİTE 2)</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+
+<div class="channel-item" onclick="playChannel(&#39;http://client.newsborntvs.info:80/live/KreshnikDahri/bRjguwZe2/51330.m3u8&#39;)">
+                    <span class="channel-name">BEİNSPORTS 1 HD YEDEK 4 (FUL HD KALİTE DONMA OLMAZ)</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+
+                <div class="channel-item" onclick="playChannel(&#39;http://client.newsborntvs.info:80/live/KreshnikDahri/bRjguwZe2/51323.m3u8&#39;)">
+                    <span class="channel-name">BEİNSPORTS 1 HD YEDEK 5 (FUL HD KALİTE DONMA OLMAZ)</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+
+
+
+
+
+                <div class="channel-item" onclick="playChannel(&#39;http://client.newsborntvs.info:80/live/KreshnikDahri/bRjguwZe2/86297.m3u8&#39;)">
+                    <span class="channel-name">BEİNSPORTS 1 HD (1080p FULL KALİTE AZ DONMA OLABİLİR)</span>
+                </div>
+
+                <div class="channel-item" onclick="playChannel(&#39;http://client.newsborntvs.info:80/live/KreshnikDahri/bRjguwZe2/51330.m3u8&#39;)">
+                    <span class="channel-name">BEİNSPORTS 1 YEDEK HD (KALİTE DONMA OLMAZ)</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+
+
+
+
+                 <div class="channel-item" onclick="playChannel(&#39;http://client.newsborntvs.info:80/live/KreshnikDahri/bRjguwZe2/51323.m3u8&#39;)">
+                    <span class="channel-name">BEİNSPORTS 1 HD YEDEK 2(1K KALİTE DONMA OLMAZ)</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+
+
+
+
+
+                <div class="channel-item" onclick="playChannel(&#39;http://xc-stream.cdn.zerocdn.com/derbi.m3u&#39;)">
+                    <span class="channel-name">BEİNSPORTS 1 HD YEDEK 3 (4K KALİTE AZ DONMA OLABİLİR)</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+
+
+
+
+
+
+
+
+                <div class="channel-item" onclick="playChannel(&#39;http://client.newsborntvs.info:80/live/KreshnikDahri/bRjguwZe2/86297.m3u8&#39;)">
+                    <span class="channel-name">BEİNSPORTS 1 HD YEDEK 4 (4K MAÇ ZAMANI AKTİF OLUR)</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="channel-item" onclick="playChannel(&#39;http://client.newsborntvs.info:80/live/KreshnikDahri/bRjguwZe2/51324.m3u8&#39;)">
+                    <span class="channel-name">BEİNSPORTS 2 HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+                <div class="channel-item" onclick="playChannel(&#39;http://sorunsuztv.xyz:8080/live/Fdy123old/4645fsder3873/6097.m3u8&#39;)">
+                    <span class="channel-name">BEİNSPORTS 3 HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+                
+                <div class="channel-item" onclick="playChannel(&#39;http://sorunsuztv.xyz:8080/live/Fdy123old/4645fsder3873/195813.m3u8&#39;)">
+                    <span class="channel-name">BEİNSPORTS 4 HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+                <div class="channel-item" onclick="playChannel(&#39;http://client.newsborntvs.info:80/live/KreshnikDahri/bRjguwZe2/71614.m3u8&#39;)">
+                    <span class="channel-name">BEİNSPORTS 5 HD </span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+                <div class="channel-item" onclick="playChannel(&#39;https://bcovlive-a.akamaihd.net/540fcb034b144b848e7ff887f61a293a/eu-central-1/6415845530001/playlist.m3u8&#39;)">
+                    <span class="channel-name">S SPORTS HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+                <div class="channel-item" onclick="playChannel(&#39;https://bcovlive-a.akamaihd.net/29c60f23ea4840ba8726925a77fcfd0b/eu-central-1/6415845530001/playlist.m3u8&#39;)">
+                    <span class="channel-name">S SPORTS 2 HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+
+                 <div class="channel-item" onclick="playChannel(&#39;https://1hskrdto.rocketcdn.com/fenerbahcetv.smil/playlist.m3u8&#39;)">
+                    <span class="channel-name">FB TV HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+                <div class="channel-item" onclick="playChannel(&#39;http://sc.523451.xyz:80/live/gcifci526/26062022sda@@/818.m3u8&#39;)">
+                    <span class="channel-name">GS TV HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+
+
+
+
+
+
+                <div class="channel-item" onclick="playChannel(&#39;http://sorunsuztv.xyz:8080/live/brhm5031/brhmby.1905/6102.m3u8&#39;)">
+                    <span class="channel-name">TİVİBUSPOR HD 1</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+                <div class="channel-item" onclick="playChannel(&#39;http://client.newsborntvs.info:80/live/KreshnikDahri/bRjguwZe2/51338.m3u8&#39;)">
+                    <span class="channel-name">TİVİBUSPOR HD 2</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+                <div class="channel-item" onclick="playChannel(&#39;http://client.newsborntvs.info:80/live/KreshnikDahri/bRjguwZe2/51339.m3u8&#39;)">
+                    <span class="channel-name">TİVİBUSPOR HD 3</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+                <div class="channel-item" onclick="playChannel(&#39;http://1sn.ns1.name:18800/live/esathotnjaniDHjet21D30/jsQSdubaArbenpanda/221838.m3u8&#39;)">
+                    <span class="channel-name">TİVİBUSPOR HD 4</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+<div class="channel-item" onclick="playChannel(&#39;https://ceokzokgtd.erbvr.com/tabiitv/tabiitv.m3u8&#39;)">
+                    <span class="channel-name">TABİİ TV HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+
+
+<div class="channel-item" onclick="playChannel(&#39;https://beert7sqimrk0bfdupfgn6qew.medya.trt.com.tr/master_1080p.m3u8&#39;)">
+                    <span class="channel-name">TABİİ SPOR  HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+
+
+
+                <div class="channel-item" onclick="playChannel(&#39;https://beert7sqimrk0bfdupfgn6qew.medya.trt.com.tr/master_1080p.m3u8&#39;)">
+                    <span class="channel-name">TABİİ SPOR 1 HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+                <div class="channel-item" onclick="playChannel(&#39;https://klublsslubcgyiz7zqt5bz8il.medya.trt.com.tr/master_1080p.m3u8&#39;)">
+                    <span class="channel-name">TABİİ SPOR 2 HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+                <div class="channel-item" onclick="playChannel(&#39;https://ujnf69op16x2fiiywxcnx41q8.medya.trt.com.tr/master_1080p.m3u8&#39;)">
+                    <span class="channel-name">TABİİ SPOR 3 HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+                <div class="channel-item" onclick="playChannel(&#39;https://bfxy3jgeydpbphtk8qfqwm3hr.medya.trt.com.tr/master_1080p.m3u8&#39;)">
+                    <span class="channel-name">TABİİ SPOR 4 HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+
+
+
+                 <div class="channel-item" onclick="playChannel(&#39;https://trkvz.daioncdn.net/atv/atv_1080p.m3u8?e=1740682948&amp;st=avUzd_aBaBX2x-cfa-Jz_g&amp;sid=774a45ieamsq&amp;app=d1ce2d40-5256-4550-b02e-e73c185a314e&amp;ce=3&#39;)">
+                    <span class="channel-name">ATV HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                 <div class="channel-item" onclick="playChannel(&#39;https://tv8-live.daioncdn.net/tv8/tv8_1080p.m3u8&#39;)">
+                    <span class="channel-name">TV8 HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+
+                 <div class="channel-item" onclick="playChannel(&#39;https://tv8-live.daioncdn.net/tv8bucuk/tv8bucuk_1080p.m3u8&#39;)">
+                    <span class="channel-name">TV 8.5 HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+
+
+
+<div class="channel-item" onclick="playChannel(&#39;https://tv-trt1.medya.trt.com.tr/master_1080.m3u8&#39;)">
+                    <span class="channel-name">TRT 1 FULL HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+
+
+
+
+                <div class="channel-item" onclick="playChannel(&#39;http://1sn.ns1.name:18800/live/esathotnjaniDHjet21D30/jsQSdubaArbenpanda/16975.m3u8&#39;)">
+                    <span class="channel-name">TRT1 HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+<div class="channel-item" onclick="playChannel(&#39;https://tv-trtspor1.medya.trt.com.tr/master_720.m3u8&#39;)">
+                    <span class="channel-name">TRT SPOR HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+
+<div class="channel-item" onclick="playChannel(&#39;https://tv-trtbelgesel.medya.trt.com.tr/master.m3u8&#39;)">
+                    <span class="channel-name">TRT BELGESEL HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+             
+ <div class="channel-item" onclick="playChannel(&#39;https://demiroren-live.daioncdn.net/kanald/kanald_1080p.m3u8&#39;)">
+                    <span class="channel-name">KANAL D HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+                <div class="channel-item" onclick="playChannel(&#39;https://beyaztv-live.daioncdn.net/beyaztv/beyaztv_720p.m3u8&#39;)">
+                    <span class="channel-name">BEYAZ TV HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+ <div class="channel-item" onclick="playChannel(&#39;http://134432.universalx.eu:80/live/yamu21/a48p67jm9i/96896.m3u8&#39;)">
+                    <span class="channel-name">EXXEN 1 HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+
+<div class="channel-item" onclick="playChannel(&#39;https://ciner-live.daioncdn.net/showtv/showtv_720p.m3u8&#39;)">
+                    <span class="channel-name">SHOW HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+
+                <div class="channel-item" onclick="playChannel(&#39;https://15595674c0604ed6.mediapackage.eu-central-1.amazonaws.com/out/v1/dbc93664979b4b6db20d13f0d58f4b07/index.m3u8&#39;)">
+                    <span class="channel-name">BLUTV HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+ <div class="channel-item" onclick="playChannel(&#39;https://15595674c0604ed6.mediapackage.eu-central-1.amazonaws.com/out/v1/f0134e8bd5cc4964bbdbc12aff9bf27e/index.m3u8&#39;)">
+                    <span class="channel-name">BLUTV 2 HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+
+                <div class="channel-item" onclick="playChannel(&#39;https://hlsplayer.net/embed?type=m3u8&amp;src=https://ciner-live.daioncdn.net/ht-spor/ht-spor_1080p.m3u8&#39;)">
+                    <span class="channel-name">HT SPOR HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+
+                 <div class="channel-item" onclick="playChannel(&#39;https://live.sportstv.com.tr/hls/low/sportstv.m3u8&#39;)">
+                    <span class="channel-name">SSPORTS HD</span>
+                    <span class="live-indicator">● Canlı</span>
+                </div>
+
+
+                
+
+               
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </main>
+    <footer class="bg-dark text-white py-3 text-center mt-4">
+        <div class="container">
+            <p>FellaStream Tarafından Desteklenmektedir.</p>
+        </div>
+    </footer>
+    <script src="./ROAD SPORTS TV_files/video.js.indir"></script>
+    <script>
+        function playChannel(streamUrl) {
+            const videoSource = document.getElementById('videoSource');
+            videoSource.src = streamUrl;
+            const player = videojs('player');
+            player.src({
+                src: streamUrl,
+                type: 'application/x-mpegURL'
+            });
+            player.play();
+        }
+        function filterChannels() {
+            const searchInput = document.getElementById('channelSearch').value.toLowerCase();
+            const channelItems = document.querySelectorAll('.channel-item');
+            channelItems.forEach(item => {
+                if (item.textContent.toLowerCase().includes(searchInput)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Canli Sohbet</title>
+  <style>
+    /* Canlı destek kutusu */
+    .live-chat {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 350px;
+      height: 500px;
+      background: #fff;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      overflow: hidden;
+      transform: scale(0);
+      transition: transform 0.3s ease-in-out;
+      z-index: 1000;
+    }
+
+    .live-chat.active {
+      transform: scale(1);
+    }
+
+    .live-chat iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Canlı destek butonu */
+    .chat-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1001;
+      font-size: 16px;
+      font-weight: bold;
+      transition: box-shadow 0.3s ease, transform 0.2s ease;
+    }
+
+    .chat-toggle:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      transform: scale(1.1);
+    }
+
+    /* İkon stili */
+    .chat-toggle i {
+      font-size: 20px;
+    }
+  </style>
+  <link href="./ROAD SPORTS TV_files/all.min.css" rel="stylesheet">
+
+
+
+<!-- Canlı destek açma/kapatma butonu -->
+<button class="chat-toggle" onclick="toggleChat()">
+  <i class="fas fa-comments"></i> Canli Sohbet
+</button>
+
+<!-- Canlı destek kutusu -->
+<div class="live-chat" id="liveChat">
+  <iframe src="./ROAD SPORTS TV_files/saved_resource.html" allowtransparency="yes" allow="autoplay" scrolling="auto"></iframe>
+</div>
+
+<script>
+  function toggleChat() {
+    const chatBox = document.getElementById('liveChat');
+    chatBox.classList.toggle('active');
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (window.location.href.includes("view-source")) {
+    window.location.href = "https://google.com"; // Kullanıcıyı başka bir sayfaya yönlendir
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+<style>
+  /* Arka plan efekti */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+  }
+
+  /* Açık olduğunda */
+  .overlay.show {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* Bildirim kutusu */
+  .popup-box {
+    background: white;
+    padding: 25px;
+    width: 400px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    animation: popUp 0.5s ease-out;
+    position: relative;
+  }
+
+  /* Başlık */
+  .popup-box h2 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  /* Açıklama metni */
+  .popup-box p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+
+  /* Kapatma butonu */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #888;
+  }
+
+  .close-btn:hover {
+    color: black;
+  }
+
+  /* Twitter butonu */
+  .twitter-follow-btn {
+    background-color: #1DA1F2;
+    color: white;
+    font-size: 16px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .twitter-follow-btn img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+
+  .twitter-follow-btn:hover {
+    background-color: #0d8ae5;
+  }
+
+  /* Açılma animasyonu */
+  @keyframes popUp {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+</style>
+
+<!-- Bildirim Kutusu -->
+<div id="popup" class="overlay">
+  <div class="popup-box">
+    <button class="close-btn" onclick="closePopup()">×</button>
+    <h2>Telegram Adresimize Katıl</h2>
+    <p>Süper Lig  ile ilgili en güncel haberleri Ve Maçları kaçırmamak için Telegram adresimizi takip edin!</p>
+    <a href="https://t.me/barafella" target="_blank" class="twitter-follow-btn">
+      <img src="./ROAD SPORTS TV_files/images" alt="Twitter">
+      Takip Et
+    </a>
+  </div>
+</div>
+
+<script>
+  // Pop-up'ı aç
+  function openPopup() {
+    document.getElementById('popup').classList.add('show');
+  }
+
+  // Pop-up'ı kapat
+  function closePopup() {
+    document.getElementById('popup').classList.remove('show');
+  }
+
+  // Sayfa açıldığında pop-up'ı göster
+  window.onload = function() {
+    setTimeout(openPopup, 000); // 0.0 saniye sonra açılır
+    setTimeout(closePopup, 10000); // 10 saniye sonra otomatik kapanır
+  };
+</script>
+
+
+</body></html>
