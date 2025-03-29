@@ -1,1 +1,27 @@
-<iframe src=https://www.hlsplayer.net/embed?type=m3u8&src=https://dt-live-bc-beinsports01.akamaized.net/ppv/beinsports01/beinsports01.isml/hdntl=exp=1743305240~acl=%2f*~id=acf9cbdffa-278c-8072-76cc-5b563985fe57_1743229640603~data=hdntl~hmac=51c881dca2f6cbb4bbfbb9514a687d587f278ca82c80bdf6ec914d7360512469/beinsports01dp-audio_tur=128000-video=6000000.m3u8 />
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Simple Free HLS Player Example</title>  
+        <!-- Include hls.js from a CDN -->
+        <script src="https://cdn.tutorialjinni.com/hls.js/1.2.1/hls.min.js"></script>
+        
+    </head>
+    <body>
+        <!-- HTML5 Video Tag -->
+        <video id="video" 
+               width='480px' height='360px' controls autoplay
+               src="https://dt-live-bc-beinsports01.akamaized.net/ppv/beinsports01/beinsports01.isml/hdntl=exp=1743305240~acl=%2f*~id=acf9cbdffa-278c-8072-76cc-5b563985fe57_1743229640603~data=hdntl~hmac=51c881dca2f6cbb4bbfbb9514a687d587f278ca82c80bdf6ec914d7360512469/beinsports01dp-audio_tur=128000-video=6000000.m3u8">
+        </video>
+        <!-- Invocation Script -->
+        <script>
+            if (Hls.isSupported()) {
+              var video = document.getElementById('video');
+              var hls = new Hls();
+              hls.loadSource(video.src);
+              hls.attachMedia(video);
+            }else{
+                alert("Cannot stream HLS, use another video source");
+            }
+        </script>
+    </body>
+</html>
