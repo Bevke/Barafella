@@ -13,7 +13,7 @@
                 align-items: center;     /* Dikeyde ortalama */
                 height: 100vh;           /* Sayfanın tamamını kapsar */
                 flex-direction: column;  /* Logo ve yazıyı dikeyde hizalamak için */
-                background-color: #cccccc; /* Sayfa arka plan rengini gri yapalım */
+                background-color: #cccccc; /* Sayfa arka plan rengi gri */
             }
 
             /* Logo için stil */
@@ -44,13 +44,18 @@
                 display: inline-block;
                 text-align: center;
                 margin-top: 60px; /* Header ile çakışmasın diye bir boşluk bırak */
+                width: 100vw; /* Ekran genişliğine göre ayarlama */
+                height: 100vh; /* Ekran yüksekliğine göre ayarlama */
             }
 
             /* Video için stil */
             video {
-                display: block;
-                width: 80%; /* Ekranın %80'i kadar genişlik */
-                max-width: 1000px; /* Maksimum genişlik sınırı */
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%; /* Ekranı tamamen kaplaması için */
+                height: 100%; /* Ekranı tamamen kaplaması için */
+                object-fit: cover; /* Video oranlarını bozmadan ekranı tamamen kaplar */
             }
         </style>
     </head>
@@ -71,8 +76,8 @@
             // Ekran boyutlarına göre video çözünürlüğünü ayarlayan fonksiyon
             function setVideoSize() {
                 var video = document.getElementById('video');
-                var width = window.innerWidth * 0.8;  // Ekranın %80'i kadar genişlik
-                var height = window.innerHeight * 0.6; // Ekranın %60'ı kadar yükseklik
+                var width = window.innerWidth * 1;  // Ekranın tamamını kullan
+                var height = window.innerHeight * 1; // Ekranın tamamını kullan
                 video.width = width;
                 video.height = height;
             }
