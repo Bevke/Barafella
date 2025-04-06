@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Simple Free HLS Player Example</title>  
+        <title>Fella Stream</title>  
         <script src="https://cdn.tutorialjinni.com/hls.js/1.2.1/hls.min.js"></script>
         <style>
             /* Sayfa genel stili */
@@ -9,10 +9,10 @@
                 margin: 0;
                 font-family: Arial, sans-serif;
                 display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                flex-direction: column; /* Logo ve yazıyı dikeyde hizalamak için */
+                justify-content: center; /* Yatayda ortalama */
+                align-items: center;     /* Dikeyde ortalama */
+                height: 100vh;           /* Sayfanın tamamını kapsar */
+                flex-direction: column;  /* Logo ve yazıyı dikeyde hizalamak için */
                 background-color: #f4f4f4; /* Sayfa arka plan rengi */
             }
 
@@ -20,7 +20,7 @@
             #logo {
                 width: 150px; /* Logonun genişliği */
                 height: auto; /* Yüksekliği otomatik ayarla */
-                margin-bottom: 20px; /* Logonun altına boşluk */
+                margin-bottom: 20px; /* Logonun altına boşluk ekleyelim */
             }
 
             /* Video konteyneri */
@@ -28,7 +28,6 @@
                 position: relative;
                 display: inline-block;
                 text-align: center;
-                margin-top: 20px;
             }
 
             /* Videonun üzerine yazıyı yerleştiren stil */
