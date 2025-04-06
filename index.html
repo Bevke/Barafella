@@ -1,29 +1,29 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Fella Stream</title>  
+        <title>Simple Free HLS Player Example</title>  
         <script src="https://cdn.tutorialjinni.com/hls.js/1.2.1/hls.min.js"></script>
         <style>
-            /* Genel sayfa stili */
+            /* Sayfa genel stili */
             body {
                 margin: 0;
                 font-family: Arial, sans-serif;
-            }
-
-            /* Header kısmı için stil */
-            header {
-                background-color: #333; /* Başlık kısmının arka planı */
-                padding: 10px 20px; /* Başlık kısmına iç boşluk */
-                text-align: center; /* Logo ortalanacak */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                flex-direction: column; /* Logo ve yazıyı dikeyde hizalamak için */
+                background-color: #f4f4f4; /* Sayfa arka plan rengi */
             }
 
             /* Logo için stil */
             #logo {
                 width: 150px; /* Logonun genişliği */
                 height: auto; /* Yüksekliği otomatik ayarla */
+                margin-bottom: 20px; /* Logonun altına boşluk */
             }
 
-            /* Videoyu ve yazıyı yerleştiren container */
+            /* Video konteyneri */
             #video-container {
                 position: relative;
                 display: inline-block;
@@ -31,7 +31,7 @@
                 margin-top: 20px;
             }
 
-            /* Videonun üzerine yazıyı ve logoyu ortalamak için stil */
+            /* Videonun üzerine yazıyı yerleştiren stil */
             #overlay {
                 position: absolute;
                 top: 50%;
@@ -44,6 +44,7 @@
                 z-index: 10;
             }
 
+            /* Video için stil */
             video {
                 display: block;
                 width: 80%; /* Ekranın %80'i kadar genişlik */
@@ -52,12 +53,8 @@
         </style>
     </head>
     <body>
-        <!-- Header kısmı (Logo burada yer alır) -->
-        <header>
-            <!-- Logoyu buraya ekliyoruz -->
-            <img id="logo" src="images/logo.png" alt="Logo"> <!-- Burada logo.png yerine kendi logonuzun yolunu verin -->
-        </header>
-
+        <!-- Logo -->
+        <img id="logo" src="images/logo.png" alt="Logo"> <!-- Burada logo.png yerine kendi logonuzun yolunu verin -->
 
         <!-- Video ve yazı üst üste gelecek şekilde container -->
         <div id="video-container">
