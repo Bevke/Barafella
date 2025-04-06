@@ -1,25 +1,99 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Simple Free HLS Player Example</title>  
-        <!-- Include hls.js from a CDN -->
+        <title>Fella Stream</title>  
         <script src="https://cdn.tutorialjinni.com/hls.js/1.2.1/hls.min.js"></script>
-        
+        <style>
+            /* Genel sayfa stili */
+            body {
+                margin: 0;
+                font-family: Arial, sans-serif;
+            }
+
+            /* Header kısmı için stil */
+            header {
+                background-color: #333; /* Başlık kısmının arka planı */
+                padding: 10px 20px; /* Başlık kısmına iç boşluk */
+                text-align: center; /* Logo ortalanacak */
+            }
+
+            /* Logo için stil */
+            #logo {
+                width: 150px; /* Logonun genişliği */
+                height: auto; /* Yüksekliği otomatik ayarla */
+            }
+
+            /* Videoyu ve yazıyı yerleştiren container */
+            #video-container {
+                position: relative;
+                display: inline-block;
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            /* Videonun üzerine yazıyı ve logoyu ortalamak için stil */
+            #overlay {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 30px;
+                font-weight: bold;
+                color: white;
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+                z-index: 10;
+            }
+
+            video {
+                display: block;
+                width: 80%; /* Ekranın %80'i kadar genişlik */
+                max-width: 1000px; /* Maksimum genişlik sınırı */
+            }
+        </style>
     </head>
     <body>
-        <!-- HTML5 Video Tag -->
-        <video id="video" 
-               width='480px' height='360px' controls autoplay
-               src="https://dt-live-bc-beinsports01.akamaized.net/ppv/beinsports01/beinsports01.isml/hdntl=exp=1743305240~acl=%2f*~id=acf9cbdffa-278c-8072-76cc-5b563985fe57_1743229640603~data=hdntl~hmac=51c881dca2f6cbb4bbfbb9514a687d587f278ca82c80bdf6ec914d7360512469/beinsports01dp-audio_tur=128000-video=6000000.m3u8">
-        </video>
-        <!-- Invocation Script -->
+        <!-- Header kısmı (Logo burada yer alır) -->
+        <header>
+            <!-- Logoyu buraya ekliyoruz -->
+            <img id="logo" src="images/logo.png" alt="Logo"> <!-- Burada logo.png yerine kendi logonuzun yolunu verin -->
+        </header>
+
+
+        <!-- Video ve yazı üst üste gelecek şekilde container -->
+        <div id="video-container">
+            <video id="video" controls autoplay>
+            </video>
+
+            <!-- Video üzerine yazı -->
+            <div id="overlay">Fella Stream</div>
+        </div>
+
         <script>
+            // Ekran boyutlarına göre video çözünürlüğünü ayarlayan fonksiyon
+            function setVideoSize() {
+                var video = document.getElementById('video');
+                var width = window.innerWidth * 0.8;  // Ekranın %80'i kadar genişlik
+                var height = window.innerHeight * 0.6; // Ekranın %60'ı kadar yükseklik
+                video.width = width;
+                video.height = height;
+            }
+
+            // Sayfa yüklendiğinde ve pencere boyutu değiştiğinde video boyutunu ayarla
+            window.onload = setVideoSize;
+            window.onresize = setVideoSize;
+
             if (Hls.isSupported()) {
-              var video = document.getElementById('video');
-              var hls = new Hls();
-              hls.loadSource(video.src);
-              hls.attachMedia(video);
-            }else{
+                var video = document.getElementById('video');
+                var hls = new Hls();
+                hls.loadSource('https://dt-live-bc-beinsports01.akamaized.net/ppv/beinsports01/beinsports01.isml/hdntl=exp=1743981688~acl=%2f*~id=acf9cbdffa-278c-8072-76cc-5b563985fe57_1743906088379~data=hdntl~hmac=8d05deb660ad81e352710fd6c3ef38a6e222562afd772321fb679f13e5fe2113/beinsports01dp-audio_tur=128000-video=6000000.m3u8');
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
+                    console.log('Manifest parsed, found ' + data.levels.length + ' quality levels');
+                });
+                hls.on(Hls.Events.LEVEL_SWITCHED, function (event, data) {
+                    console.log('Switched to level ' + data.level);
+                });
+            } else {
                 alert("Cannot stream HLS, use another video source");
             }
         </script>
