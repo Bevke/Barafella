@@ -12,15 +12,8 @@
                 justify-content: center; /* Yatayda ortalama */
                 align-items: center;     /* Dikeyde ortalama */
                 height: 100vh;           /* Sayfanın tamamını kapsar */
-                flex-direction: column;  /* Logo ve yazıyı dikeyde hizalamak için */
+                flex-direction: column;  /* Yalnızca başlık ve video içerir */
                 background-color: #cccccc; /* Sayfa arka plan rengi gri */
-            }
-
-            /* Logo için stil */
-            #logo {
-                width: 150px; /* Logonun genişliği */
-                height: auto; /* Yüksekliği otomatik ayarla */
-                margin-bottom: 20px; /* Logonun altına boşluk ekleyelim */
             }
 
             /* Header için stil (yazıyı üst kısma taşımak için) */
@@ -62,9 +55,6 @@
     <body>
         <!-- Header (yazıyı üst kısma taşımak için) -->
         <div id="header">Fella Stream</div>
-
-        <!-- Logo -->
-        <img id="logo" src="images/logo.png" alt="Logo"> <!-- Burada logo.png yerine kendi logonuzun yolunu verin -->
 
         <!-- Video ve yazı üst üste gelecek şekilde container -->
         <div id="video-container">
