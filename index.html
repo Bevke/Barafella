@@ -88,7 +88,7 @@
             if (Hls.isSupported()) {
                 var video = document.getElementById('video');
                 var hls = new Hls();
-                hls.loadSource('https://dt-live-bc-beinsports01.akamaized.net/ppv/beinsports01/beinsports01.isml/hdntl=exp=1743981688~acl=%2f*~id=acf9cbdffa-278c-8072-76cc-5b563985fe57_1743906088379~data=hdntl~hmac=8d05deb660ad81e352710fd6c3ef38a6e222562afd772321fb679f13e5fe2113/beinsports01dp-audio_tur=128000-video=6000000.m3u8');
+                hls.loadSource('http://2.59.119.32/tmp_hls/stream95/index.m3u8');
                 hls.attachMedia(video);
                 hls.on(Hls.Events.MANIFEST_PARSED, function (event, data) {
                     console.log('Manifest parsed, found ' + data.levels.length + ' quality levels');
