@@ -16,11 +16,17 @@
     }
 
     body {
-      background: url('[![Image](https://i.hizliresim.com/sqpigxe.jpg') no-repeat center center fixed;
+      background: url('https://i.hizliresim.com/sqpigxe.jpg') no-repeat center center fixed;
       background-size: cover;
       display: flex;
       justify-content: center;
       align-items: center;
+      animation: fadeIn 2s ease-out;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
     }
 
     .login-box {
@@ -33,11 +39,18 @@
       color: #fff;
       width: 90%;
       max-width: 400px;
+      animation: slideIn 1s ease-out;
+    }
+
+    @keyframes slideIn {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(0); }
     }
 
     .login-box h2 {
       margin-bottom: 20px;
       font-size: 24px;
+      animation: fadeIn 1.5s ease-out;
     }
 
     .login-box input {
@@ -47,6 +60,8 @@
       margin-bottom: 15px;
       border: none;
       border-radius: 10px;
+      opacity: 0;
+      animation: fadeIn 1s ease-out 0.5s forwards;
     }
 
     .login-box button {
@@ -59,10 +74,22 @@
       cursor: pointer;
       width: 100%;
       transition: background-color 0.3s ease;
+      opacity: 0;
+      animation: fadeIn 1s ease-out 1s forwards;
     }
 
     .login-box button:hover {
       background-color: #2ecc71;
+      transform: scale(1.05);
+    }
+
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      animation: fadeIn 2s ease-out;
     }
 
     @media (max-width: 500px) {
@@ -77,6 +104,7 @@
   </style>
 </head>
 <body>
+  <img src="https://i.hizliresim.com/3ux3yd7.png" alt="Logo" class="logo">
   <div class="login-box">
     <h2>Fella Stream'e Giriş</h2>
     <input type="password" id="sifre" placeholder="Şifreyi girin">
@@ -92,7 +120,7 @@
       const hashArray = Array.from(new Uint8Array(hashBuffer));
       const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 
-      // Yeni şifre: yarrakbulursun kanka sg
+      // Yeni şifre: barafellabestkanka
       const dogruHash = "80c3e9b845ee859c0ee180a1465ec4a3c3aa6ad6ae30f4e0e7fc0992e1a59407";
 
       if (hashHex === dogruHash) {
