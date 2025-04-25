@@ -2,17 +2,65 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Giriş</title>
+  <title>Giriş - Fella Stream</title>
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border: none;
+      width: 250px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #5b5b5b;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #777;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 <body>
-  <h2>Şifre Girişi</h2>
+  <h2>Fella Stream'e Giriş</h2>
   <input type="password" id="sifre" placeholder="Şifreyi girin">
-  <button onclick="girisYap()">Giriş</button>
+  <button onclick="girisYap()">Giriş Yap</button>
 
   <script>
-    function girisYap() {
+    async function girisYap() {
       const sifre = document.getElementById("sifre").value;
-      if (sifre === "barafellapro31") {
+      const encoder = new TextEncoder();
+      const data = encoder.encode(sifre);
+      const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
+      // Şifre: yarrak bulursun moruk sg
+      const dogruHash = "d35d7c2e4f8c89d4f4ec28a5ac196e96f2d4f0ff54bc21cc74b8b062d6b0205d";
+
+      if (hashHex === dogruHash) {
         sessionStorage.setItem("auth", "true");
         window.location.href = "player.html";
       } else {
