@@ -3,6 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Fella Stream Giriş</title>
+  
+  <!-- Open Graph Etiketleri -->
+  <meta property="og:title" content="Fella Stream - Giriş" />
+  <meta property="og:description" content="Fella Stream'e giriş yaparak canlı yayınları izlemeye başlayın!" />
+  <meta property="og:image" content="https://i.hizliresim.com/3ux3yd7.png" />
+  <meta property="og:url" content="https://your-site-url.com/giris.html" />
+  <meta property="og:type" content="website" />
+
   <style>
     * {
       margin: 0;
@@ -107,21 +115,21 @@
   <img src="https://i.hizliresim.com/3ux3yd7.png" alt="Logo" class="logo">
   <div class="login-box">
     <h2>Fella Stream'e Giriş</h2>
-    <input type="password" id="sifre" placeholder="Şifreyi girin">
+    <input type="password" id="sifre" placeholder="Şifreyi girin" onkeydown="if(event.key === 'Enter'){ girisYap(); }">
     <button onclick="girisYap()">Giriş Yap</button>
   </div>
 
-
+  <!-- config.js dosyasını ekliyoruz -->
   <script src="config.js"></script>
 
   <script>
     function girisYap() {
       const sifre = document.getElementById("sifre").value;
 
-
+      // config.js dosyasındaki şifreyi kullanıyoruz
       if (sifre === correctPassword) {
         sessionStorage.setItem("auth", "true");
-        window.location.href = "yayın.html";
+        window.location.href = "yayın.html"; // Şifre doğruysa yönlendirme
       } else {
         alert("Hatalı şifre!");
       }
