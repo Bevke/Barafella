@@ -119,24 +119,19 @@
     <button onclick="girisYap()">Giriş Yap</button>
   </div>
 
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1-crypto-js.js"></script>
+  <!-- config.js dosyasını ekliyoruz -->
+  <script src="config.js"></script>
 
   <script>
-
-    const correctPasswordHash = "4d186321c1a7f0f354b297e8914ab24054d7047a7a982b19dbb2495d098975ad"; 
-
     function girisYap() {
       const sifre = document.getElementById("sifre").value;
 
-      const hashedPassword = CryptoJS.SHA256(sifre).toString(CryptoJS.enc.Hex);
-
-      // Şifre doğruysa yönlendirme yapıyoruz
-      if (hashedPassword === correctPasswordHash) {
+      // config.js dosyasındaki şifreyi kullanıyoruz
+      if (sifre === correctPassword) {
         sessionStorage.setItem("auth", "true");
         window.location.href = "yayın.html"; // Şifre doğruysa yönlendirme
       } else {
-        alert("Hatalı şifre!"); // Yanlış şifre
+        alert("Hatalı şifre!");
       }
     }
   </script>
