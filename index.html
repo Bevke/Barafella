@@ -88,7 +88,7 @@
       top: 20px;
       left: 50%;
       transform: translateX(-50%);
-      width: 100px;
+      width: 150px; /* Logoyu büyüttüm */
       animation: fadeIn 2s ease-out;
     }
 
@@ -120,12 +120,12 @@
       const hashArray = Array.from(new Uint8Array(hashBuffer));
       const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
 
-      // Yeni şifre: barafellabestkanka
+      // Yeni şifre: yarrak bulursun
       const dogruHash = "80c3e9b845ee859c0ee180a1465ec4a3c3aa6ad6ae30f4e0e7fc0992e1a59407";
 
       if (hashHex === dogruHash) {
         sessionStorage.setItem("auth", "true");
-        window.location.href = "player.html";
+        window.location.href = "yayın.html"; // Şifre doğruysa yönlendirme
       } else {
         alert("Hatalı şifre!");
       }
