@@ -2,44 +2,23 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Maç Hizmeti</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-    }
-    .banner {
-      background-image: url('https://i.hizliresim.com/3ux3yd7.png');
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      position: relative;
-      font-family: Arial, sans-serif;
-    }
-    .banner h1 {
-      text-align: center;
-      color: black;
-      font-size: 36px;
-      padding-top: 40px;
-      text-shadow: 1px 1px 2px white;
-    }
-    .logo {
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    .logo img {
-      height: 80px;
-    }
-  </style>
+  <title>Giriş</title>
 </head>
 <body>
-  <div class="banner">
-    <h1>BU HİZMETE HER MAÇ ULAŞMAK İSTEYENLER DM @BARAFELLA0 YAZSIN.</h1>
-    <div class="logo">
-      <img src="https://i.hizliresim.com/3ux3yd7.png" alt="Logo">
-    </div>
-  </div>
+  <h2>Şifre Girişi</h2>
+  <input type="password" id="sifre" placeholder="Şifreyi girin">
+  <button onclick="girisYap()">Giriş</button>
+
+  <script>
+    function girisYap() {
+      const sifre = document.getElementById("sifre").value;
+      if (sifre === "barafellapro31") {
+        sessionStorage.setItem("auth", "true");
+        window.location.href = "player.html";
+      } else {
+        alert("Hatalı şifre!");
+      }
+    }
+  </script>
 </body>
 </html>
