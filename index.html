@@ -1,139 +1,139 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-  <meta charset="UTF-8">
-  <title>Fella Stream Giriş</title>
+  <!DOCTYPE html>
+  <html lang="tr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Fella Stream Giriş</title>
+    
+    <!-- Open Graph Etiketleri -->
+    <meta property="og:title" content="Fella Stream - Giriş" />
+    <meta property="og:description" content="Fella Stream'e giriş yaparak canlı yayınları izlemeye başlayın!" />
+    <meta property="og:image" content="https://i.hizliresim.com/3ux3yd7.png" />
+    <meta property="og:url" content="https://your-site-url.com/giris.html" />
+    <meta property="og:type" content="website" />
   
-  <!-- Open Graph Etiketleri -->
-  <meta property="og:title" content="Fella Stream - Giriş" />
-  <meta property="og:description" content="Fella Stream'e giriş yaparak canlı yayınları izlemeye başlayın!" />
-  <meta property="og:image" content="https://i.hizliresim.com/3ux3yd7.png" />
-  <meta property="og:url" content="https://your-site-url.com/giris.html" />
-  <meta property="og:type" content="website" />
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body, html {
-      height: 100%;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    body {
-      background: url('https://i.hizliresim.com/sqpigxe.jpg') no-repeat center center fixed;
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      animation: fadeIn 2s ease-out;
-    }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-
-    .login-box {
-      backdrop-filter: blur(10px);
-      background: rgba(0, 0, 0, 0.5);
-      padding: 40px 30px;
-      border-radius: 20px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-      text-align: center;
-      color: #fff;
-      width: 90%;
-      max-width: 400px;
-      animation: slideIn 1s ease-out;
-    }
-
-    @keyframes slideIn {
-      0% { transform: translateY(-100%); }
-      100% { transform: translateY(0); }
-    }
-
-    .login-box h2 {
-      margin-bottom: 20px;
-      font-size: 24px;
-      animation: fadeIn 1.5s ease-out;
-    }
-
-    .login-box input {
-      padding: 12px;
-      font-size: 16px;
-      width: 100%;
-      margin-bottom: 15px;
-      border: none;
-      border-radius: 10px;
-      opacity: 0;
-      animation: fadeIn 1s ease-out 0.5s forwards;
-    }
-
-    .login-box button {
-      padding: 12px 20px;
-      font-size: 16px;
-      background-color: #27ae60;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      width: 100%;
-      transition: background-color 0.3s ease;
-      opacity: 0;
-      animation: fadeIn 1s ease-out 1s forwards;
-    }
-
-    .login-box button:hover {
-      background-color: #2ecc71;
-      transform: scale(1.05);
-    }
-
-    .logo {
-      position: absolute;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 150px;
-      animation: fadeIn 2s ease-out;
-    }
-
-    @media (max-width: 500px) {
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+  
+      body, html {
+        height: 100%;
+        font-family: 'Segoe UI', sans-serif;
+      }
+  
+      body {
+        background: url('https://i.hizliresim.com/sqpigxe.jpg') no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: fadeIn 2s ease-out;
+      }
+  
+      @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+  
       .login-box {
-        padding: 30px 20px;
+        backdrop-filter: blur(10px);
+        background: rgba(0, 0, 0, 0.5);
+        padding: 40px 30px;
+        border-radius: 20px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+        text-align: center;
+        color: #fff;
+        width: 90%;
+        max-width: 400px;
+        animation: slideIn 1s ease-out;
       }
-
+  
+      @keyframes slideIn {
+        0% { transform: translateY(-100%); }
+        100% { transform: translateY(0); }
+      }
+  
       .login-box h2 {
-        font-size: 20px;
+        margin-bottom: 20px;
+        font-size: 24px;
+        animation: fadeIn 1.5s ease-out;
       }
-    }
-  </style>
-</head>
-<body>
-  <img src="https://i.hizliresim.com/3ux3yd7.png" alt="Logo" class="logo">
-  <div class="login-box">
-    <h2>Fella Stream'e Giriş</h2>
-    <input type="password" id="sifre" placeholder="Şifreyi girin" onkeydown="if(event.key === 'Enter'){ girisYap(); }">
-    <button onclick="girisYap()">Giriş Yap</button>
-  </div>
-
-  <!-- config.js dosyasını ekliyoruz -->
-  <script src="config.js"></script>
-
-  <script>
-    function girisYap() {
-      const sifre = document.getElementById("sifre").value;
-
-      // config.js dosyasındaki şifreyi kullanıyoruz
-      if (sifre === correctPassword) {
-        sessionStorage.setItem("auth", "true");
-        window.location.href = "aynen.html"; // Şifre doğruysa yönlendirme
-      } else {
-        alert("Hatalı şifre!");
+  
+      .login-box input {
+        padding: 12px;
+        font-size: 16px;
+        width: 100%;
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 10px;
+        opacity: 0;
+        animation: fadeIn 1s ease-out 0.5s forwards;
       }
-    }
-  </script>
-</body>
-</html>
+  
+      .login-box button {
+        padding: 12px 20px;
+        font-size: 16px;
+        background-color: #27ae60;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        width: 100%;
+        transition: background-color 0.3s ease;
+        opacity: 0;
+        animation: fadeIn 1s ease-out 1s forwards;
+      }
+  
+      .login-box button:hover {
+        background-color: #2ecc71;
+        transform: scale(1.05);
+      }
+  
+      .logo {
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 150px;
+        animation: fadeIn 2s ease-out;
+      }
+  
+      @media (max-width: 500px) {
+        .login-box {
+          padding: 30px 20px;
+        }
+  
+        .login-box h2 {
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <img src="https://i.hizliresim.com/3ux3yd7.png" alt="Logo" class="logo">
+    <div class="login-box">
+      <h2>Fella Stream'e Giriş</h2>
+      <input type="password" id="sifre" placeholder="Şifreyi girin" onkeydown="if(event.key === 'Enter'){ girisYap(); }">
+      <button onclick="girisYap()">Giriş Yap</button>
+    </div>
+  
+    <!-- config.js dosyasını ekliyoruz -->
+    <script src="config.js"></script>
+  
+    <script>
+      function girisYap() {
+        const sifre = document.getElementById("sifre").value;
+  
+        // config.js dosyasındaki şifreyi kullanıyoruz
+        if (sifre === correctPassword) {
+          sessionStorage.setItem("auth", "true");
+          window.location.href = "aynen.html"; // Şifre doğruysa yönlendirme
+        } else {
+          alert("Hatalı şifre!");
+        }
+      }
+    </script>
+  </body>
+  </html>
