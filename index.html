@@ -1,139 +1,183 @@
-  <!DOCTYPE html>
-  <html lang="tr">
-  <head>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
     <meta charset="UTF-8">
-    <title>Fella Stream Giriş</title>
-    
+    <title>Fella Stream</title>  
+
     <!-- Open Graph Etiketleri -->
-    <meta property="og:title" content="Fella Stream - Giriş" />
-    <meta property="og:description" content="Fella Stream'e giriş yaparak canlı yayınları izlemeye başlayın!" />
+    <meta property="og:title" content="Fella Stream - Canlı Yayın" />
+    <meta property="og:description" content="Fella Stream ile canlı yayın izleyin!" />
     <meta property="og:image" content="https://i.hizliresim.com/3ux3yd7.png" />
-    <meta property="og:url" content="https://your-site-url.com/giris.html" />
+    <meta property="og:url" content="https://bevke.github.io/Barafella/" />
     <meta property="og:type" content="website" />
-  
+    
+    <script src="https://cdn.tutorialjinni.com/hls.js/1.2.1/hls.min.js"></script>
+    
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-  
-      body, html {
-        height: 100%;
-        font-family: 'Segoe UI', sans-serif;
-      }
-  
-      body {
-        background: url('https://i.hizliresim.com/sqpigxe.jpg') no-repeat center center fixed;
-        background-size: cover;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        animation: fadeIn 2s ease-out;
-      }
-  
-      @keyframes fadeIn {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
-      }
-  
-      .login-box {
-        backdrop-filter: blur(10px);
-        background: rgba(0, 0, 0, 0.5);
-        padding: 40px 30px;
-        border-radius: 20px;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-        text-align: center;
-        color: #fff;
-        width: 90%;
-        max-width: 400px;
-        animation: slideIn 1s ease-out;
-      }
-  
-      @keyframes slideIn {
-        0% { transform: translateY(-100%); }
-        100% { transform: translateY(0); }
-      }
-  
-      .login-box h2 {
-        margin-bottom: 20px;
-        font-size: 24px;
-        animation: fadeIn 1.5s ease-out;
-      }
-  
-      .login-box input {
-        padding: 12px;
-        font-size: 16px;
-        width: 100%;
-        margin-bottom: 15px;
-        border: none;
-        border-radius: 10px;
-        opacity: 0;
-        animation: fadeIn 1s ease-out 0.5s forwards;
-      }
-  
-      .login-box button {
-        padding: 12px 20px;
-        font-size: 16px;
-        background-color: #27ae60;
-        color: white;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        width: 100%;
-        transition: background-color 0.3s ease;
-        opacity: 0;
-        animation: fadeIn 1s ease-out 1s forwards;
-      }
-  
-      .login-box button:hover {
-        background-color: #2ecc71;
-        transform: scale(1.05);
-      }
-  
-      .logo {
-        position: absolute;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 150px;
-        animation: fadeIn 2s ease-out;
-      }
-  
-      @media (max-width: 500px) {
-        .login-box {
-          padding: 30px 20px;
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background-color: #cccccc;
         }
-  
-        .login-box h2 {
-          font-size: 20px;
+
+        #header {
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+            background-color: #333;
+            padding: 10px 20px;
+            width: 100%;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 20;
+            animation: slideIn 1s ease-out;
         }
-      }
+
+        #nav {
+            margin-top: 10px;
+        }
+
+        #nav button {
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #555;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        #nav button:hover {
+            background-color: #777;
+            transform: scale(1.1);
+        }
+
+        #video-container {
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            margin-top: 120px;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #loading-logo {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 999;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 40px;
+            border-radius: 20px;
+            transition: opacity 0.5s ease;
+        }
+
+        #loading-logo img {
+            width: 180px;
+            height: auto;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.9; }
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateY(-100%); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
     </style>
-  </head>
-  <body>
-    <img src="https://i.hizliresim.com/3ux3yd7.png" alt="Logo" class="logo">
-    <div class="login-box">
-      <h2>Fella Stream'e Giriş</h2>
-      <input type="password" id="sifre" placeholder="Şifreyi girin" onkeydown="if(event.key === 'Enter'){ girisYap(); }">
-      <button onclick="girisYap()">Giriş Yap</button>
+</head>
+<body>
+    <div id="header">
+        Fella Stream
+        <div id="nav">
+            <button onclick="switchStream('bein')">#bein</button>
+            <button onclick="switchStream('fella')">#fella stream</button>
+            <button onclick="window.location.href='digerkanal.html'">#diğer kanallar</button>
+            <!-- Yeni Dizi Yayınları Butonu -->
+            <button onclick="window.location.href='dizi.html'">Dizi Yayınları</button>
+        </div>
     </div>
-  
-    <!-- config.js dosyasını ekliyoruz -->
-    <script src="config.js"></script>
-  
+
+    <!-- Loading ekranı -->
+    <div id="loading-logo">
+        <img src="https://i.hizliresim.com/3ux3yd7.png" alt="Loading..." />
+    </div>
+
+    <div id="video-container">
+        <video id="video" controls autoplay></video>
+    </div>
+
     <script>
-      function girisYap() {
-        const sifre = document.getElementById("sifre").value;
-  
-        // config.js dosyasındaki şifreyi kullanıyoruz
-        if (sifre === correctPassword) {
-          sessionStorage.setItem("auth", "true");
-          window.location.href = "aynen.html"; // Şifre doğruysa yönlendirme
-        } else {
-          alert("Hatalı şifre!");
+        const streams = {
+            bein: 'https://dt-live-bc-beinsports01.akamaized.net/ppv/beinsports01/beinsports01.isml/hdntl=exp=1746406403~acl=%2f*~id=acf9cbdffa-278c-8072-76cc-5b563985fe57_1746330803311~data=hdntl~hmac=7bad588ae3ebf63a8135dfb0705c68eaa2cecb7010c981e1cf8953ad97bb9d51/beinsports01dp-audio_tur=128000-video=6000000.m3u8',
+            fella: 'http://2.59.119.32/tmp_hls/stream95/index.m3u8'
+        };
+
+        let hls;
+
+        function setVideoSize() {
+            var video = document.getElementById('video');
+            video.width = window.innerWidth;
+            video.height = window.innerHeight;
         }
-      }
+
+        window.onresize = setVideoSize;
+
+        function switchStream(channel) {
+            const video = document.getElementById('video');
+            const loading = document.getElementById('loading-logo');
+
+            loading.style.display = 'block';
+            loading.style.opacity = 1;
+
+            if (Hls.isSupported()) {
+                if (hls) {
+                    hls.destroy();
+                }
+                hls = new Hls();
+                hls.loadSource(streams[channel]);
+                hls.attachMedia(video);
+                video.oncanplay = function () {
+                    loading.style.opacity = 0;
+                    setTimeout(() => loading.style.display = 'none', 500);
+                };
+            } else {
+                video.src = streams[channel];
+                video.oncanplay = function () {
+                    loading.style.opacity = 0;
+                    setTimeout(() => loading.style.display = 'none', 500);
+                };
+            }
+        }
+
+        window.onload = function () {
+            setVideoSize();
+            switchStream('bein');
+        };
     </script>
-  </body>
-  </html>
+</body>
+</html>
